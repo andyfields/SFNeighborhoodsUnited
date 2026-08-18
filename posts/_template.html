@@ -1,17 +1,31 @@
 <!doctype html>
+<!--
+  BLOG POST TEMPLATE
+
+  To add a post:
+    1. Copy this file to posts/YYYY-MM-DD-short-title.html
+    2. Replace every ALL-CAPS placeholder below.
+    3. Add a matching summary card to the .post-list in /index.html.
+
+  This template is not linked from anywhere, but on most plain static hosts it
+  IS still reachable at /posts/_template.html. It is marked noindex so search
+  engines skip it.
+-->
 <html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog | San Francisco Neighborhoods United</title>
+  <title>POST TITLE | San Francisco Neighborhoods United</title>
   <link rel="stylesheet" href="/css/style.css">
-  <meta name="description" content="News and updates from San Francisco Neighborhoods United.">
+  <meta name="description" content="POST SUMMARY">
+  <!-- Delete this line in real posts — it only keeps the blank template out of search results. -->
+  <meta name="robots" content="noindex">
 
-  <meta property="og:title" content="San Francisco Neighborhoods United">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.sanfrancisconeighborhoodsunited.org/">
-  <meta property="og:description" content="News and updates from San Francisco Neighborhoods United.">
+  <meta property="og:title" content="POST TITLE">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.sanfrancisconeighborhoodsunited.org/posts/POST-FILENAME.html">
+  <meta property="og:description" content="POST SUMMARY">
   <meta property="og:image" content="https://www.sanfrancisconeighborhoodsunited.org/icon.png">
   <meta property="og:image:alt" content="San Francisco Neighborhoods United">
 
@@ -30,7 +44,7 @@
     <div class="wrap">
       <a class="site-title" href="/">San Francisco Neighborhoods United</a>
       <nav class="site-nav" aria-label="Main">
-        <a class="btn" href="/" aria-current="page">Blog</a>
+        <a class="btn" href="/">Blog</a>
         <a class="btn" href="/about.html">About</a>
       </nav>
     </div>
@@ -38,31 +52,14 @@
   <!-- ===== END SHARED HEADER ===== -->
 
   <main class="wrap" id="main">
-    <h1 class="page-title">Blog</h1>
+    <article class="post prose">
+      <h1 class="page-title">POST TITLE</h1>
+      <p class="post-meta"><time datetime="YYYY-MM-DD">MONTH DAY, YEAR</time></p>
 
-    <!--
-      Each blog entry gets one summary card here, newest first.
-      Copy the block below, fill it in, and point the link at the post page
-      you created from posts/_template.html.
-    -->
-    <div class="post-list">
+      <p>Post body goes here.</p>
+    </article>
 
-      <!-- EXAMPLE — copy this block for each new post, then delete this comment.
-      <article class="post-summary">
-        <h2 class="post-summary-title">
-          <a href="/posts/2026-08-20-example-post.html">Title of the blog entry</a>
-        </h2>
-        <p class="post-meta"><time datetime="2026-08-20">August 20, 2026</time></p>
-        <p class="post-excerpt">
-          One or two sentences summarizing the entry.
-        </p>
-        <p><a class="read-more" href="/posts/2026-08-20-example-post.html">Read more</a></p>
-      </article>
-      -->
-
-      <p class="empty-state">No posts yet. Check back soon.</p>
-
-    </div>
+    <p class="back-link"><a href="/">&larr; Back to the blog</a></p>
   </main>
 
   <!-- ===== SHARED FOOTER — keep identical on every page ===== -->

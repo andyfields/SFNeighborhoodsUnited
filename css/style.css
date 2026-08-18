@@ -84,6 +84,245 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+:root {
+  --brand: #1f3a5f;
+  --brand-dark: #16293f;
+  --ink: #1c1c1c;
+  --ink-muted: #5a5a5a;
+  --rule: #d9d9d9;
+  --page-bg: #fff;
+  --max-width: 44rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+
+  /* Sticky footer: main grows to push the footer to the bottom. */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+/* Shared centered column, used by header, main and footer. */
+.wrap {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* --- Header ------------------------------------------------------------ */
+
+.site-header {
+  background: var(--brand);
+  padding: 1.75rem 1.25rem;
+}
+
+.site-header .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  text-align: center;
+}
+
+.site-title {
+  color: #fff;
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-wrap: balance;
+}
+
+.site-title:hover,
+.site-title:focus-visible {
+  text-decoration: underline;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 7rem;
+  padding: 0.5rem 1.25rem;
+  border: 2px solid rgb(255 255 255 / 70%);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #fff;
+  color: var(--brand);
+}
+
+/* The button for the page you are already on. */
+.btn[aria-current="page"] {
+  background: #fff;
+  border-color: #fff;
+  color: var(--brand);
+}
+
+/* --- Page content ------------------------------------------------------ */
+
+.page-title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.2;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.prose p,
+.prose ul,
+.prose ol {
+  margin: 0 0 1.125rem;
+}
+
+.prose a,
+.post-excerpt a,
+.back-link a {
+  color: var(--brand);
+}
+
+/* --- Blog index -------------------------------------------------------- */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-summary {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-summary:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.post-summary-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.post-summary-title a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.post-summary-title a:hover,
+.post-summary-title a:focus-visible {
+  text-decoration: underline;
+}
+
+.post-meta {
+  margin: 0 0 0.75rem;
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+}
+
+.post-excerpt {
+  margin: 0 0 0.75rem;
+}
+
+.read-more {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+.empty-state {
+  margin: 0;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.back-link {
+  margin: 2.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* --- Footer ------------------------------------------------------------ */
+
+.site-footer {
+  flex-shrink: 0;
+  padding: 2rem 1.25rem;
+  border-top: 3px solid var(--brand);
+  background: #f4f5f7;
+  text-align: center;
+}
+
+.footer-title {
+  margin: 0 0 0.5rem;
+
+  /* Deliberately smaller than the header title. */
+  font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand-dark);
+  text-wrap: balance;
+}
+
+.footer-contact {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.footer-contact a {
+  color: var(--brand);
+
+  /* Long address must not overflow narrow phones. */
+  overflow-wrap: anywhere;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

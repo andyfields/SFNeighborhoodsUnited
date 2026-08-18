@@ -1,12 +1,12 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "SF Neighborhoods United",
+  "name": "San Francisco Neighborhoods United",
   "icons": [{
-    "src": "icon.png",
+    "src": "/icon.png",
     "type": "image/png",
     "sizes": "192x192"
   }],
   "start_url": "/?utm_source=homescreen",
   "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "theme_color": "#1f3a5f"
 }

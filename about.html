@@ -4,14 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page Not Found | San Francisco Neighborhoods United</title>
+  <title>About | San Francisco Neighborhoods United</title>
   <link rel="stylesheet" href="/css/style.css">
-  <meta name="robots" content="noindex">
+  <meta name="description" content="About San Francisco Neighborhoods United.">
+
+  <meta property="og:title" content="About | San Francisco Neighborhoods United">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sanfrancisconeighborhoodsunited.org/about.html">
+  <meta property="og:description" content="About San Francisco Neighborhoods United.">
+  <meta property="og:image" content="https://www.sanfrancisconeighborhoodsunited.org/icon.png">
+  <meta property="og:image:alt" content="San Francisco Neighborhoods United">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/icon.png">
 
+  <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1f3a5f">
 </head>
 
@@ -23,17 +31,21 @@
       <a class="site-title" href="/">San Francisco Neighborhoods United</a>
       <nav class="site-nav" aria-label="Main">
         <a class="btn" href="/">Blog</a>
-        <a class="btn" href="/about.html">About</a>
+        <a class="btn" href="/about.html" aria-current="page">About</a>
       </nav>
     </div>
   </header>
   <!-- ===== END SHARED HEADER ===== -->
 
   <main class="wrap" id="main">
-    <h1 class="page-title">Page Not Found</h1>
+    <h1 class="page-title">About</h1>
+
     <div class="prose">
-      <p>Sorry, the page you were trying to view does not exist.</p>
-      <p><a href="/">Go to the blog</a> or <a href="/about.html">read about us</a>.</p>
+      <!-- TODO: replace this placeholder with the real About text. -->
+      <p>
+        Text to come. Replace everything inside this <code>.prose</code> block with
+        the About copy.
+      </p>
     </div>
   </main>
 
@@ -48,7 +60,8 @@
   </footer>
   <!-- ===== END SHARED FOOTER ===== -->
 
+  <script src="/js/app.js"></script>
+
 </body>
 
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->

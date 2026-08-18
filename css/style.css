@@ -91,7 +91,10 @@ textarea {
 
   /* rgb(231, 226, 221) — shared by the header, body and footer. */
   --page-bg: #e7e2dd;
-  --max-width: 44rem;
+
+  /* Maximum page width; the page centres itself on wider screens. */
+  --max-width: 1000px;
+  --gutter: 1.25rem;
 }
 
 html {
@@ -121,30 +124,26 @@ body {
 
 main {
   flex: 1 0 auto;
-  padding: 2.5rem 1.25rem 4rem;
+  padding-block: 2.5rem 4rem;
 }
 
-/* Centered reading column, used by the page content. */
+/*
+ * The one page column. The header, footer and content all use it, so the
+ * header title, body text and footer title share the same left edge, and the
+ * navigation and email address share the same right edge.
+ */
 .wrap {
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
-}
-
-/*
- * The header and footer span the full page width instead, so their contents
- * justify to the page edges rather than to the reading column.
- */
-.site-header .wrap,
-.site-footer .wrap {
-  max-width: none;
+  padding-inline: var(--gutter);
 }
 
 /* --- Header ------------------------------------------------------------ */
 
 .site-header {
   background: var(--page-bg);
-  padding: 1.75rem 1.25rem;
+  padding-block: 1.75rem;
 
   /* Header shares the body colour, so a rule provides the separation. */
   border-bottom: 3px solid var(--ink);
@@ -300,7 +299,7 @@ main {
 
 .site-footer {
   flex-shrink: 0;
-  padding: 2rem 1.25rem;
+  padding-block: 2rem;
   border-top: 3px solid var(--ink);
   background: var(--page-bg);
 }

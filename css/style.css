@@ -85,10 +85,8 @@ textarea {
    ========================================================================== */
 
 :root {
-  --brand: #1f3a5f;
-  --brand-dark: #16293f;
-  --ink: #1c1c1c;
-  --ink-muted: #5a5a5a;
+  /* rgb(78, 52, 29) — every piece of text on the site, and the rules. */
+  --ink: #4e341d;
   --rule: #cec7bf;
 
   /* rgb(231, 226, 221) — shared by the header, body and footer. */
@@ -140,20 +138,22 @@ main {
   padding: 1.75rem 1.25rem;
 
   /* Header shares the body colour, so a rule provides the separation. */
-  border-bottom: 3px solid var(--brand);
+  border-bottom: 3px solid var(--ink);
 }
 
+/* Title on the left, navigation on the right. */
 .site-header .wrap {
   display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  text-align: left;
 }
 
 .site-title {
-  color: var(--brand-dark);
-  font-size: clamp(1.75rem, 6vw, 2.75rem);
+  color: var(--ink);
+  font-size: clamp(1.5rem, 4.5vw, 2.25rem);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -169,35 +169,36 @@ main {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
 }
 
-.btn {
-  display: inline-block;
-  min-width: 7rem;
-  padding: 0.5rem 1.25rem;
-  border: 2px solid var(--brand);
-  border-radius: 999px;
-  color: var(--brand);
-  font-size: 1rem;
+.nav-link {
+  color: var(--ink);
+  font-size: 1.0625rem;
   font-weight: 600;
-  text-align: center;
   text-decoration: none;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
 }
 
-.btn:hover,
-.btn:focus-visible {
-  background: var(--brand);
-  color: var(--page-bg);
+.nav-link:hover,
+.nav-link:focus-visible {
+  text-decoration: underline;
 }
 
-/* The button for the page you are already on. */
-.btn[aria-current="page"] {
-  background: var(--brand);
-  border-color: var(--brand);
-  color: var(--page-bg);
+/* The link for the page you are already on. */
+.nav-link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+
+/* Narrow screens: stack the header, keeping everything left-aligned. */
+@media only screen and (max-width: 40em) {
+  .site-header .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
 }
 
 /* --- Page content ------------------------------------------------------ */
@@ -228,10 +229,12 @@ main {
   margin: 0 0 1.125rem;
 }
 
+/* Links share the text colour, so they stay underlined to remain identifiable. */
 .prose a,
 .post-excerpt a,
 .back-link a {
-  color: var(--brand);
+  color: var(--ink);
+  text-decoration: underline;
 }
 
 /* --- Blog index -------------------------------------------------------- */
@@ -259,7 +262,7 @@ main {
 }
 
 .post-summary-title a {
-  color: var(--brand);
+  color: var(--ink);
   text-decoration: none;
 }
 
@@ -270,7 +273,7 @@ main {
 
 .post-meta {
   margin: 0 0 0.75rem;
-  color: var(--ink-muted);
+  color: var(--ink);
   font-size: 0.9375rem;
 }
 
@@ -279,13 +282,13 @@ main {
 }
 
 .read-more {
-  color: var(--brand);
+  color: var(--ink);
   font-weight: 600;
 }
 
 .empty-state {
   margin: 0;
-  color: var(--ink-muted);
+  color: var(--ink);
   font-style: italic;
 }
 
@@ -300,32 +303,55 @@ main {
 .site-footer {
   flex-shrink: 0;
   padding: 2rem 1.25rem;
-  border-top: 3px solid var(--brand);
+  border-top: 3px solid var(--ink);
   background: var(--page-bg);
-  text-align: center;
+}
+
+/* Title on the left, email address on the right. */
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  text-align: left;
 }
 
 .footer-title {
-  margin: 0 0 0.5rem;
+  margin: 0;
 
   /* Deliberately smaller than the header title. */
-  font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  font-size: clamp(1.375rem, 4vw, 1.875rem);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--brand-dark);
+  color: var(--ink);
   text-wrap: balance;
 }
 
 .footer-contact {
   margin: 0;
   font-size: 0.9375rem;
+  text-align: right;
 }
 
 .footer-contact a {
-  color: var(--brand);
+  color: var(--ink);
 
   /* Long address must not overflow narrow phones. */
   overflow-wrap: anywhere;
+}
+
+/* Narrow screens: stack the footer, keeping everything left-aligned. */
+@media only screen and (max-width: 40em) {
+  .site-footer .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .footer-contact {
+    text-align: left;
+  }
 }
 
 /* ==========================================================================

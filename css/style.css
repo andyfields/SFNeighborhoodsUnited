@@ -124,11 +124,20 @@ main {
   padding: 2.5rem 1.25rem 4rem;
 }
 
-/* Shared centered column, used by header, main and footer. */
+/* Centered reading column, used by the page content. */
 .wrap {
   width: 100%;
   max-width: var(--max-width);
   margin-inline: auto;
+}
+
+/*
+ * The header and footer span the full page width instead, so their contents
+ * justify to the page edges rather than to the reading column.
+ */
+.site-header .wrap,
+.site-footer .wrap {
+  max-width: none;
 }
 
 /* --- Header ------------------------------------------------------------ */
@@ -141,34 +150,32 @@ main {
   border-bottom: 3px solid var(--ink);
 }
 
-/* Title on the left, navigation on the right. */
+/* Title on the left, navigation on the right, always on one line. */
 .site-header .wrap {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0.5rem 1.5rem;
+  gap: 1.5rem;
   text-align: left;
 }
 
 .site-title {
+  /* Takes the leftover width; wraps onto more lines rather than pushing the
+     navigation off the row. */
+  flex: 1 1 auto;
+  margin: 0;
   color: var(--ink);
   font-size: clamp(1.5rem, 4.5vw, 2.25rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.01em;
-  text-decoration: none;
   text-wrap: balance;
 }
 
-.site-title:hover,
-.site-title:focus-visible {
-  text-decoration: underline;
-}
-
 .site-nav {
+  flex: 0 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1.5rem;
 }
 
@@ -190,15 +197,6 @@ main {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.3em;
-}
-
-/* Narrow screens: stack the header, keeping everything left-aligned. */
-@media only screen and (max-width: 40em) {
-  .site-header .wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
 }
 
 /* --- Page content ------------------------------------------------------ */
@@ -307,28 +305,30 @@ main {
   background: var(--page-bg);
 }
 
-/* Title on the left, email address on the right. */
+/* Title on the left, email address on the right, always on one line. */
 .site-footer .wrap {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0.5rem 1.5rem;
+  gap: 1.5rem;
   text-align: left;
 }
 
 .footer-title {
+  flex: 1 1 auto;
   margin: 0;
 
   /* Deliberately smaller than the header title. */
   font-size: clamp(1.375rem, 4vw, 1.875rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--ink);
   text-wrap: balance;
 }
 
 .footer-contact {
+  flex: 0 1 auto;
   margin: 0;
   font-size: 0.9375rem;
   text-align: right;
@@ -339,19 +339,6 @@ main {
 
   /* Long address must not overflow narrow phones. */
   overflow-wrap: anywhere;
-}
-
-/* Narrow screens: stack the footer, keeping everything left-aligned. */
-@media only screen and (max-width: 40em) {
-  .site-footer .wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .footer-contact {
-    text-align: left;
-  }
 }
 
 /* ==========================================================================

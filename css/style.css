@@ -89,8 +89,10 @@ textarea {
   --brand-dark: #16293f;
   --ink: #1c1c1c;
   --ink-muted: #5a5a5a;
-  --rule: #d9d9d9;
-  --page-bg: #fff;
+  --rule: #cec7bf;
+
+  /* rgb(231, 226, 221) — shared by the header, body and footer. */
+  --page-bg: #e7e2dd;
   --max-width: 44rem;
 }
 
@@ -134,8 +136,11 @@ main {
 /* --- Header ------------------------------------------------------------ */
 
 .site-header {
-  background: var(--brand);
+  background: var(--page-bg);
   padding: 1.75rem 1.25rem;
+
+  /* Header shares the body colour, so a rule provides the separation. */
+  border-bottom: 3px solid var(--brand);
 }
 
 .site-header .wrap {
@@ -147,7 +152,7 @@ main {
 }
 
 .site-title {
-  color: #fff;
+  color: var(--brand-dark);
   font-size: clamp(1.75rem, 6vw, 2.75rem);
   font-weight: 700;
   line-height: 1.15;
@@ -172,9 +177,9 @@ main {
   display: inline-block;
   min-width: 7rem;
   padding: 0.5rem 1.25rem;
-  border: 2px solid rgb(255 255 255 / 70%);
+  border: 2px solid var(--brand);
   border-radius: 999px;
-  color: #fff;
+  color: var(--brand);
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -184,15 +189,15 @@ main {
 
 .btn:hover,
 .btn:focus-visible {
-  background: #fff;
-  color: var(--brand);
+  background: var(--brand);
+  color: var(--page-bg);
 }
 
 /* The button for the page you are already on. */
 .btn[aria-current="page"] {
-  background: #fff;
-  border-color: #fff;
-  color: var(--brand);
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--page-bg);
 }
 
 /* --- Page content ------------------------------------------------------ */
@@ -296,7 +301,7 @@ main {
   flex-shrink: 0;
   padding: 2rem 1.25rem;
   border-top: 3px solid var(--brand);
-  background: #f4f5f7;
+  background: var(--page-bg);
   text-align: center;
 }
 

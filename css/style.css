@@ -159,16 +159,30 @@ main {
   text-align: left;
 }
 
-.site-title {
-  /* Takes the leftover width; wraps onto more lines rather than pushing the
-     navigation off the row. */
+/* Title with the tagline stacked beneath it. Takes the leftover width, so the
+   title wraps onto more lines rather than pushing the navigation off the row. */
+.site-branding {
   flex: 1 1 auto;
+}
+
+.site-title {
   margin: 0;
   color: var(--ink);
   font-size: clamp(1.5rem, 4.5vw, 2.25rem);
   font-weight: 400;
   line-height: 1.15;
   text-wrap: balance;
+}
+
+.site-tagline {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.site-tagline a {
+  color: var(--ink);
+  text-decoration: underline;
 }
 
 .site-nav {

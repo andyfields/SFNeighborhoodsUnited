@@ -256,7 +256,11 @@ main {
   gap: 2rem;
 }
 
+/* Thumbnail on the left, summary text on the right. */
 .post-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--rule);
 }
@@ -264,6 +268,36 @@ main {
 .post-summary:last-child {
   padding-bottom: 0;
   border-bottom: 0;
+}
+
+.post-summary-thumb {
+  flex: 0 0 9rem;
+  display: block;
+}
+
+.post-summary-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post-summary-body {
+  /* min-width lets long words wrap instead of stretching the flex item. */
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Narrow screens: thumbnail above the text rather than beside it. */
+@media only screen and (max-width: 34em) {
+  .post-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .post-summary-thumb {
+    flex-basis: auto;
+    max-width: 12rem;
+  }
 }
 
 .post-summary-title {
@@ -313,6 +347,11 @@ main {
 
 .post-figure {
   margin: 1.75rem 0;
+}
+
+/* Tall images would otherwise fill the screen at the full column width. */
+.post-figure--portrait {
+  max-width: 26rem;
 }
 
 .post-figure img {

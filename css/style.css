@@ -128,6 +128,33 @@ main {
 }
 
 /*
+ * Large screens: pin the header and footer, and scroll only the content
+ * between them. The height condition keeps this off phones in landscape,
+ * where a fixed header and footer would leave almost nothing to read.
+ * Small screens keep the ordinary whole-page scroll.
+ */
+@media only screen and (min-width: 48em) and (min-height: 40em) {
+  body {
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .site-header,
+  .site-footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    /* min-height lets the flex item shrink below its content, which is what
+       makes it scroll instead of pushing the footer off-screen. */
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+}
+
+/*
  * The one page column. The header, footer and content all use it, so the
  * header title, body text and footer title share the same left edge, and the
  * navigation and email address share the same right edge.

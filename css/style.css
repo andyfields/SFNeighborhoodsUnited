@@ -265,6 +265,7 @@ main {
 .post-subtitle {
   margin: -0.75rem 0 0.75rem;
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  font-style: italic;
   line-height: 1.35;
 }
 
@@ -396,6 +397,18 @@ main {
 /* Tall images would otherwise fill the screen at the full column width. */
 .post-figure--portrait {
   max-width: 26rem;
+}
+
+/* 25% narrower than --portrait, and centred in the column. */
+.post-figure--narrow {
+  max-width: 19.5rem;
+  margin-inline: auto;
+}
+
+/* Centres the title, subtitle and lead image of a post. */
+.post--centered-head .page-title,
+.post--centered-head .post-subtitle {
+  text-align: center;
 }
 
 .post-figure img {

@@ -405,9 +405,10 @@ main {
   margin-inline: auto;
 }
 
-/* Centres the title, subtitle and lead image of a post. */
+/* Centres the title, subtitle, date and lead image of a post. */
 .post--centered-head .page-title,
-.post--centered-head .post-subtitle {
+.post--centered-head .post-subtitle,
+.post--centered-head .post-meta {
   text-align: center;
 }
 

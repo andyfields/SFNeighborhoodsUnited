@@ -405,9 +405,9 @@ main {
   margin-inline: auto;
 }
 
-/* Lead image at 40% of the column width, centred under the post title. */
+/* Small lead image, centred under the post title. */
 .post-figure--lead {
-  max-width: 24rem;
+  max-width: 16rem;
   margin-inline: auto;
 }
 

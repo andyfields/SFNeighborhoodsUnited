@@ -405,6 +405,12 @@ main {
   margin-inline: auto;
 }
 
+/* Lead image at 40% of the column width, centred under the post title. */
+.post-figure--lead {
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
 /* Centres the title, subtitle, date and lead image of a post. */
 .post--centered-head .page-title,
 .post--centered-head .post-subtitle,

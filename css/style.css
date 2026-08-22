@@ -411,6 +411,25 @@ main {
   margin-inline: auto;
 }
 
+/* Image on the left with its caption alongside, wrapping under on narrow screens. */
+.post-figure--side {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.post-figure--side img {
+  flex: 0 1 24rem;
+  width: 24rem;
+  max-width: 100%;
+}
+
+.post-figure--side figcaption {
+  flex: 1 1 12rem;
+  margin-top: 0;
+}
+
 /* Centres the title, subtitle, date and lead image of a post. */
 .post--centered-head .page-title,
 .post--centered-head .post-subtitle,

@@ -436,8 +436,8 @@ main {
 }
 
 .post-figure--side img {
-  flex: 0 1 16rem;
-  width: 16rem;
+  flex: 0 1 32rem;
+  width: 32rem;
   max-width: 100%;
 }
 

@@ -435,9 +435,10 @@ main {
   gap: 1.5rem;
 }
 
+/* Per-figure width: set --fig-w on the figure to override the default. */
 .post-figure--side img {
-  flex: 0 1 32rem;
-  width: 32rem;
+  flex: 0 1 var(--fig-w, 32rem);
+  width: var(--fig-w, 32rem);
   max-width: 100%;
 }
 

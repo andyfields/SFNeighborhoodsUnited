@@ -420,8 +420,8 @@ main {
 }
 
 .post-figure--side img {
-  flex: 0 1 24rem;
-  width: 24rem;
+  flex: 0 1 16rem;
+  width: 16rem;
   max-width: 100%;
 }
 

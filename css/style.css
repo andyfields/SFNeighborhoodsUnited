@@ -390,8 +390,24 @@ main {
 
 /* --- Images inside a post ---------------------------------------------- */
 
+/*
+ * Base figure rules come first; every --modifier below relies on being later
+ * in the file to win, since they share the same specificity.
+ */
 .post-figure {
   margin: 1.75rem 0;
+}
+
+.post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  font-style: italic;
 }
 
 /* Tall images would otherwise fill the screen at the full column width. */
@@ -437,17 +453,6 @@ main {
   text-align: center;
 }
 
-.post-figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.post-figure figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9375rem;
-  font-style: italic;
-}
 
 /* --- Footer ------------------------------------------------------------ */
 

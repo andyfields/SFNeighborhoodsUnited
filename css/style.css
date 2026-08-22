@@ -446,6 +446,39 @@ main {
   margin-top: 0;
 }
 
+/*
+ * Image on the left with ordinary body copy on the right — not a figure, so
+ * the text keeps the normal paragraph styling rather than caption italics.
+ */
+.media-split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.media-split > img {
+  flex: 0 1 16rem;
+  width: 16rem;
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.media-split-body {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.media-split-body > :first-child {
+  margin-top: 0;
+}
+
+.media-split-body > :last-child {
+  margin-bottom: 0;
+}
+
 /* Centres the title, subtitle, date and lead image of a post. */
 .post--centered-head .page-title,
 .post--centered-head .post-subtitle,

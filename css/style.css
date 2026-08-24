@@ -412,12 +412,12 @@ main {
 
 /* Tall images would otherwise fill the screen at the full column width. */
 .post-figure--portrait {
-  max-width: 26rem;
+  max-width: 13rem;
 }
 
-/* 25% narrower than --portrait, and centred in the column. */
+/* Centred and narrower than the column; set --fig-w to override the default. */
 .post-figure--narrow {
-  max-width: 19.5rem;
+  max-width: var(--fig-w, 19.5rem);
   margin-inline: auto;
 }
 

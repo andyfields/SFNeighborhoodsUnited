@@ -535,6 +535,40 @@ main {
   overflow-wrap: anywhere;
 }
 
+/* --- Click a photo to see it full size --------------------------------- */
+
+/* Added by js/app.js, so nothing invites a click when scripting is off. */
+.is-zoomable {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgb(0 0 0 / 85%);
+  cursor: zoom-out;
+}
+
+/* Sized against the viewport, never a percentage of the flex parent, which
+   would make the image's size depend on a box sized by the image. */
+.lightbox img {
+  display: block;
+  max-width: 94vw;
+  max-height: 94vh;
+  width: auto;
+  height: auto;
+}
+
+/* The page behind must not scroll while an image is open. */
+.has-lightbox {
+  overflow: hidden;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

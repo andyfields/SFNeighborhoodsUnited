@@ -412,7 +412,9 @@ main {
 
 /* Tall images would otherwise fill the screen at the full column width. */
 .post-figure--portrait {
-  max-width: 13rem;
+  max-width: var(--fig-w, 13rem);
+  margin-inline: auto;
+  text-align: center;
 }
 
 /* Centred and narrower than the column; set --fig-w to override the default. */

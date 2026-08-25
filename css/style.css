@@ -423,9 +423,9 @@ main {
   margin-inline: auto;
 }
 
-/* Small lead image, centred under the post title. */
+/* Small lead image, centred under the post title; set --fig-w to override. */
 .post-figure--lead {
-  max-width: 16rem;
+  max-width: var(--fig-w, 16rem);
   margin-inline: auto;
 }
 
@@ -447,6 +447,39 @@ main {
 .post-figure--side figcaption {
   flex: 1 1 12rem;
   margin-top: 0;
+}
+
+/*
+ * White panel setting a passage off from the page background. Full width on
+ * phones and tablets; narrower and centred once there is room for it.
+ */
+.post-panel {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  /* The panel is narrow, so a bare URL has to be able to wrap mid-word. */
+  overflow-wrap: break-word;
+}
+
+/* Specific enough to beat the element margins the panel's contents carry. */
+.prose .post-panel > :first-child {
+  margin-top: 0;
+}
+
+.prose .post-panel > :last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 48em) {
+  .post-panel {
+    width: 60%;
+    margin-inline: auto;
+  }
+}
+
+/* A thin black rule around the image, for screenshots that need an edge. */
+.post-figure--framed img {
+  border: 1px solid #000;
 }
 
 /*

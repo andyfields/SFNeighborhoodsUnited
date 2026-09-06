@@ -477,6 +477,49 @@ main {
   }
 }
 
+/*
+ * Two or three headline figures set off from the body copy by hairline rules
+ * rather than a filled panel, so the page background carries straight through.
+ * Markup: <dl class="stat-pair"> with a <div> wrapping each <dt>/<dd> pair.
+ */
+.stat-pair {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 3rem;
+  margin: 1.75rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+
+/* Each pair is its own column, so the dt/dd order below applies within a pair. */
+.stat-pair > div {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The figure leads, so it comes first visually even though <dt> is the label. */
+.stat-pair dt {
+  order: 2;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  /* The label is supporting detail; lighten it without losing legibility. */
+  opacity: 0.75;
+}
+
+.stat-pair dd {
+  order: 1;
+  margin: 0 0 0.25rem;
+  /* Tabular figures keep the two numbers aligned digit for digit. */
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.1875rem, 3.35vw, 1.5rem);
+  line-height: 1.1;
+}
+
 /* A thin black rule around the image, for screenshots that need an edge. */
 .post-figure--framed img {
   border: 1px solid #000;

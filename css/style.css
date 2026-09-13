@@ -450,6 +450,71 @@ main {
 }
 
 /*
+ * Two photos side by side, each wrapping onto its own row once the column is
+ * too narrow to hold both. Markup: <figure class="post-figure-row"> around two
+ * images and one figcaption. Set --fig-min to change the width they stack at.
+ */
+.post-figure-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 1.75rem 0;
+}
+
+/*
+ * Grow to share the row evenly, then wrap rather than shrink past --fig-min.
+ * min-width overrides the intrinsic floor a flex item gets by default, which
+ * would otherwise hand a wider source file a wider share of the row.
+ */
+.post-figure-row img {
+  flex: 1 1 var(--fig-min, 16rem);
+  display: block;
+  min-width: 0;
+  /* Never past the narrower source file's own size, or it would be upscaled. */
+  max-width: min(100%, var(--fig-max, 26rem));
+  height: auto;
+}
+
+/*
+ * A full-width line of its own, so it sits centred under both photos when they
+ * share a row and under the lower one once they stack.
+ */
+.post-figure-row figcaption {
+  flex: 1 1 100%;
+  margin-top: -0.25rem;
+  font-size: 0.9375rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* --- Embedded video inside a post -------------------------------------- */
+
+/*
+ * Wrapper around an embedded player. The 16:9 box keeps the player the right
+ * shape at any width; set --fig-w to cap how wide it gets.
+ */
+.post-video {
+  max-width: var(--fig-w, 32rem);
+  margin: 1.75rem auto;
+}
+
+.post-video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+.post-video figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  font-style: italic;
+}
+
+/*
  * White panel setting a passage off from the page background. Full width on
  * phones and tablets; narrower and centred once there is room for it.
  */

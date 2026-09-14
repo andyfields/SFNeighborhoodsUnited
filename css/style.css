@@ -243,7 +243,7 @@ main {
 
 .page-title {
   margin: 0 0 1.5rem;
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: clamp(1.6875rem, 4.5vw, 2.25rem);
   line-height: 1.2;
 }
 
@@ -264,9 +264,26 @@ main {
 /* Standfirst line directly under a post title. */
 .post-subtitle {
   margin: -0.75rem 0 0.75rem;
-  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+  font-size: clamp(1.25rem, 2.75vw, 1.5rem);
   font-style: italic;
   line-height: 1.35;
+}
+
+/*
+ * Aside to the reader, set apart from the body copy by being centred. Scoped
+ * to .prose so the centring margin wins over the paragraph rule below.
+ *
+ * It runs wider than a normal paragraph so the note fits on two lines on a
+ * full-width screen, and the type scales with the viewport to hold those two
+ * lines down to about a 700px window before the floor stops it shrinking.
+ */
+.prose .post-note {
+  margin: 1.5rem auto;
+  max-width: 58rem;
+  font-size: clamp(0.9375rem, 1.95vw, 1.1875rem);
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
 }
 
 .prose blockquote {

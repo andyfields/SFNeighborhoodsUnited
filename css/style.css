@@ -89,8 +89,14 @@ textarea {
   --ink: #4e341d;
   --rule: #cec7bf;
 
-  /* rgb(231, 226, 221) — shared by the header, body and footer. */
-  --page-bg: #e7e2dd;
+  /* rgb(255, 255, 255) — shared by the header, body and footer. */
+  --page-bg: #fff;
+
+  /* rgb(240, 238, 236) — panels set off from the white page. */
+  --panel-bg: #f0eeec;
+
+  /* rgb(230, 228, 226) — the margins either side of the body's text column. */
+  --margin-bg: #e6e4e2;
 
   /* Maximum page width; the page centres itself on wider screens. */
   --max-width: 1000px;
@@ -122,8 +128,24 @@ body {
   min-height: 100vh;
 }
 
+/*
+ * The margins either side of the text column are grey, so main carries the
+ * grey and its .wrap paints the column itself back to the page colour. The
+ * vertical padding belongs to .wrap rather than main so the white runs the
+ * full height of the column, and .wrap stretches to fill main when the page
+ * is short. The header and footer are left alone: they stay white edge to
+ * edge.
+ */
 main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--margin-bg);
+}
+
+main > .wrap {
+  flex: 1 0 auto;
+  background: var(--page-bg);
   padding-block: 2.5rem 4rem;
 }
 
@@ -324,7 +346,7 @@ main {
   align-items: flex-start;
   gap: 1.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 3px solid var(--rule);
 }
 
 .post-summary:last-child {
@@ -532,13 +554,13 @@ main {
 }
 
 /*
- * White panel setting a passage off from the page background. Full width on
- * phones and tablets; narrower and centred once there is room for it.
+ * Light grey panel setting a passage off from the white page background. Full
+ * width on phones and tablets; narrower and centred once there is room for it.
  */
 .post-panel {
   margin: 1.75rem 0;
   padding: 1.25rem 1.5rem;
-  background: #fff;
+  background: var(--panel-bg);
   /* The panel is narrow, so a bare URL has to be able to wrap mid-word. */
   overflow-wrap: break-word;
 }

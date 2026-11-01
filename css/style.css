@@ -662,6 +662,11 @@ main > .wrap {
   margin-bottom: 0;
 }
 
+/* A note that needs to stand out, such as a late correction or update. */
+.post-note--alert {
+  color: #ff0000;
+}
+
 /* Centres the title, subtitle, date and lead image of a post. */
 .post--centered-head .page-title,
 .post--centered-head .post-subtitle,
